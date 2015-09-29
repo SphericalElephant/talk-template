@@ -1,0 +1,37 @@
+\usepackage{pgfpages}
+\setbeameroption{hide notes}
+
+\definecolor{ElephantBlue}{RGB}{2,33,57}
+\definecolor{ElephantLight}{RGB}{230,228,223}
+
+\setbeamercolor{normal text}{fg=ElephantLight,bg=black!90}
+%\setbeamercolor{normal text}{fg=ElephantLight,bg=ElephantBlue}
+\setbeamercolor*{structure}{fg=ElephantLight}
+\setbeamercolor{alerted text}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+
+% make blocks slightly lighter
+\setbeamercolor{block title}{bg=ElephantLight}
+\setbeamercolor{block body}{parent=normal text,bg=ElephantLight}
+
+\setbeamercolor*{framesubtitle}{fg=white}
+
+\usefonttheme{professionalfonts}
+\setbeamerfont{quote}{shape=\upshape}
+
+\setbeamertemplate{navigation symbols}{}
+
+\logo{%
+    \includegraphics[width=1cm,height=1cm,keepaspectratio]{src/sphericalelephant}%
+}
+
+\usepackage{ragged2e}
+\justifying
+
+\addtobeamertemplate{block begin}{}{\justifying}
+
+\urlstyle{same}
+\usepackage[overlay,absolute]{textpos} 
