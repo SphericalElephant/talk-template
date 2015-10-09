@@ -7,6 +7,7 @@ talks/%.pdf: talks/%.md
 	pandoc $< \
 		-t beamer \
 		--slide-level 2 \
+		--highlight-style=zenburn \
 		-H src/preamble-slides.tex \
 		-o $@
 
