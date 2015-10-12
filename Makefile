@@ -21,4 +21,8 @@ talks/%-handout.pdf: talks/%.md
 
 all: $(talks_pdf) $(talks_handouts_pdf)
 
+clean:
+	rm $(talks_pdf)
+	rm $(talks_handouts_pdf)
+
 .PHONY: all
