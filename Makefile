@@ -2,6 +2,7 @@ talksdir := ./talks
 
 talks := $(wildcard $(talksdir)/*.md)
 talks_pdf := $(patsubst $(talksdir)/%.md,$(talksdir)/%.pdf,$(talks))
+talks_handouts_pdf := $(patsubst $(talksdir)/%.md,$(talksdir)/%-handout.pdf,$(talks))
 
 talks/%.pdf: talks/%.md
 	pandoc $< \
@@ -11,6 +12,13 @@ talks/%.pdf: talks/%.md
 		-H src/preamble-slides.tex \
 		-o $@
 
-all: $(talks_pdf)
+talks/%-handout.pdf: talks/%.md
+	pandoc $< \
+		-t beamer \
+		--slide-level 2 \
+		-H src/preamble-handouts.tex \
+		-o $@
+
+all: $(talks_pdf) $(talks_handouts_pdf)
 
 .PHONY: all
